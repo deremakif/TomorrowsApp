@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
-import 'secondRoute.dart';
 
 void main() => runApp(_widgetForRoute(ui.window.defaultRouteName));
 
@@ -9,46 +8,37 @@ Widget _widgetForRoute(String route) {
 
   switch (route) {
     case '/':
-      return MyApp();
+      return MySecondApp();
 
     default:
-      return Center(
-        child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
-      );
+      return MySecondApp();
   }
 }
 
-class MyApp extends StatelessWidget {
+class MySecondApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Second Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      routes: {
-        '/': (context) => MyHomePage(
-              title: "KKKK",
-            ),
-        '/SecondRoute': (context) => SecondRoute(
-              title: "FFF",
-            ),
-      },
+      home: SecondRoute(title: 'Flutter Demo Second Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class SecondRoute extends StatefulWidget {
+  SecondRoute({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _SecondRouteState createState() => _SecondRouteState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _SecondRouteState extends State<SecondRoute> {
   int _counter = 0;
 
   void _incrementCounter() {
@@ -61,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title ?? "HHH"),
       ),
       body: Center(
         child: Column(

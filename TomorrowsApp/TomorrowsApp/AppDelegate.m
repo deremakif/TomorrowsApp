@@ -26,12 +26,6 @@
 
 
 - (void)application:(UIApplication*)application
-didRegisterUserNotificationSettings:(UIUserNotificationSettings*)notificationSettings {
-    [_lifeCycleDelegate application:application
-didRegisterUserNotificationSettings:notificationSettings];
-}
-
-- (void)application:(UIApplication*)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken {
     [_lifeCycleDelegate application:application
 didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
@@ -51,19 +45,7 @@ fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandl
     return [_lifeCycleDelegate application:application openURL:url options:options];
 }
 
-- (BOOL)application:(UIApplication*)application handleOpenURL:(NSURL*)url {
-    return [_lifeCycleDelegate application:application handleOpenURL:url];
-}
 
-- (BOOL)application:(UIApplication*)application
-            openURL:(NSURL*)url
-  sourceApplication:(NSString*)sourceApplication
-         annotation:(id)annotation {
-    return [_lifeCycleDelegate application:application
-                                   openURL:url
-                         sourceApplication:sourceApplication
-                                annotation:annotation];
-}
 
 - (void)application:(UIApplication*)application
 performActionForShortcutItem:(UIApplicationShortcutItem*)shortcutItem
@@ -81,10 +63,7 @@ handleEventsForBackgroundURLSession:identifier
                   completionHandler:completionHandler];
 }
 
-- (void)application:(UIApplication*)application
-performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-    [_lifeCycleDelegate application:application performFetchWithCompletionHandler:completionHandler];
-}
+
 
 - (void)addApplicationLifeCycleDelegate:(NSObject<FlutterPlugin>*)delegate {
     [_lifeCycleDelegate addDelegate:delegate];
@@ -123,7 +102,12 @@ performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult result))comp
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-  self.flutterEngine = [[FlutterEngine alloc] initWithName:@"my flutter engine"];
+  self.flutterEngine = [[FlutterEngine alloc] initWithName:@"engine name"
+                                             
+];
+    
+ //   [self.flutterEngine runWithEntrypoint:@"main" libraryURI:@"secondRoute.dart"];
+
   // Runs the default Dart entrypoint with a default Flutter route.
   [self.flutterEngine run];
   // Used to connect plugins (only if you have plugins with iOS platform code).

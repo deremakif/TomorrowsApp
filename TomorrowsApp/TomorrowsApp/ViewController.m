@@ -21,22 +21,25 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-       [button addTarget:self
-                  action:@selector(showFlutter)
-        forControlEvents:UIControlEventTouchUpInside];
-       [button setTitle:@"Show Flutter!" forState:UIControlStateNormal];
-       button.backgroundColor = UIColor.blueColor;
-       button.frame = CGRectMake(80.0, 210.0, 160.0, 40.0);
-       [self.view addSubview:button];
+   
 }
 
-- (void)showFlutter {
-    FlutterEngine *flutterEngine =
-        ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
+- (IBAction)toDartSide:(UIButton *)sender {
+
+    FlutterEngine *flutterEngine = ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
+    
+    
     FlutterViewController *flutterViewController =
-        [[FlutterViewController alloc] initWithEngine:flutterEngine nibName:nil bundle:nil];
-    [self presentViewController:flutterViewController animated:YES completion:nil];
+        [[FlutterViewController alloc] initWithEngine:flutterEngine
+                                         
+                                              nibName:nil bundle:nil];
+    
+    
+
+    
+    [self presentViewController:flutterViewController
+                 
+                       animated:YES completion:nil];
 }
 
 - (void)flutter_to_ios {
@@ -102,11 +105,4 @@
     
 }
 
-- (IBAction)toDartSide:(UIButton *)sender {
-
-    NSLog( @"jjjj");
-   
-    NSLog( @"kkk");
-    [self flutter_to_ios];
-}
 @end
