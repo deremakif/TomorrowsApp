@@ -1,6 +1,20 @@
 import 'package:flutter/material.dart';
+import 'dart:ui' as ui;
 
-void main() => runApp(MyApp());
+void main() => runApp(_widgetForRoute(ui.window.defaultRouteName));
+
+Widget _widgetForRoute(String route) {
+  print("route::::$route");
+  route = "MyApp";
+  switch (route) {
+    case 'MyApp':
+      return new MyApp();
+    default:
+      return Center(
+        child: Text('Unknown route: $route', textDirection: TextDirection.ltr),
+      );
+  }
+}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

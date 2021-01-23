@@ -10,5 +10,7 @@
 @interface ViewController : UIViewController
 
 
+- (IBAction)toDartSide:(UIButton *)sender;
+
 @end
 

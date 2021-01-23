@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61CF809076913B8A2C1A9358 /* libPods-TomorrowsApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13737A0BBDD3C02AB511D059 /* libPods-TomorrowsApp.a */; };
 		C2F118D525BCC92200985A44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F118D425BCC92200985A44 /* AppDelegate.m */; };
 		C2F118D825BCC92200985A44 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F118D725BCC92200985A44 /* SceneDelegate.m */; };
 		C2F118DB25BCC92200985A44 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F118DA25BCC92200985A44 /* ViewController.m */; };
@@ -17,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13737A0BBDD3C02AB511D059 /* libPods-TomorrowsApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TomorrowsApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ECA5C9B8FF4E7845783FC19 /* Pods-TomorrowsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowsApp.debug.xcconfig"; path = "Target Support Files/Pods-TomorrowsApp/Pods-TomorrowsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C2F118D025BCC92200985A44 /* TomorrowsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TomorrowsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2F118D325BCC92200985A44 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C2F118D425BCC92200985A44 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		C2F118E225BCC92500985A44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2F118E425BCC92500985A44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2F118E525BCC92500985A44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3AC2FB9DCFA8460B0817620 /* Pods-TomorrowsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TomorrowsApp.release.xcconfig"; path = "Target Support Files/Pods-TomorrowsApp/Pods-TomorrowsApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,17 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61CF809076913B8A2C1A9358 /* libPods-TomorrowsApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83640E0B4D700C7E6CABB427 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6ECA5C9B8FF4E7845783FC19 /* Pods-TomorrowsApp.debug.xcconfig */,
+				E3AC2FB9DCFA8460B0817620 /* Pods-TomorrowsApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C2F118C725BCC92200985A44 = {
 			isa = PBXGroup;
 			children = (
 				C2F118D225BCC92200985A44 /* TomorrowsApp */,
 				C2F118D125BCC92200985A44 /* Products */,
+				83640E0B4D700C7E6CABB427 /* Pods */,
+				F603CF5652D39B96A9068E18 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +93,14 @@
 			path = TomorrowsApp;
 			sourceTree = "<group>";
 		};
+		F603CF5652D39B96A9068E18 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13737A0BBDD3C02AB511D059 /* libPods-TomorrowsApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2F118E925BCC92500985A44 /* Build configuration list for PBXNativeTarget "TomorrowsApp" */;
 			buildPhases = (
+				8114D349875B48B3C57F34AC /* [CP] Check Pods Manifest.lock */,
+				4E80B434DC699744A382D489 /* [CP-User] Run Flutter Build my_flutter Script */,
 				C2F118CC25BCC92200985A44 /* Sources */,
 				C2F118CD25BCC92200985A44 /* Frameworks */,
 				C2F118CE25BCC92200985A44 /* Resources */,
+				09E338E1B0A8A3C6CC720A27 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +167,64 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09E338E1B0A8A3C6CC720A27 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TomorrowsApp/Pods-TomorrowsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TomorrowsApp/Pods-TomorrowsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TomorrowsApp/Pods-TomorrowsApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4E80B434DC699744A382D489 /* [CP-User] Run Flutter Build my_flutter Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/../my_flutter/.metadata",
+				"${SRCROOT}/../my_flutter/.ios/Flutter/App.framework/App",
+				"${SRCROOT}/../my_flutter/.ios/Flutter/engine/Flutter.framework/Flutter",
+				"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh",
+			);
+			name = "[CP-User] Run Flutter Build my_flutter Script";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset -u\nsource \"${SRCROOT}/../my_flutter/.ios/Flutter/flutter_export_environment.sh\"\n\"$FLUTTER_ROOT\"/packages/flutter_tools/bin/xcode_backend.sh build";
+		};
+		8114D349875B48B3C57F34AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TomorrowsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2F118CC25BCC92200985A44 /* Sources */ = {
@@ -288,6 +374,7 @@
 		};
 		C2F118EA25BCC92500985A44 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ECA5C9B8FF4E7845783FC19 /* Pods-TomorrowsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +393,7 @@
 		};
 		C2F118EB25BCC92500985A44 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3AC2FB9DCFA8460B0817620 /* Pods-TomorrowsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
