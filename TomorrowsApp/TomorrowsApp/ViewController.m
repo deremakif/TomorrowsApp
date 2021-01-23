@@ -1,8 +1,8 @@
 //
 //  ViewController.m
-//  TodaysApp
+//  TomorrowsApp
 //
-//  Created by Mehmet Akif DERE on 23.01.2021.
+//  Created by Mehmet Akif DERE on 24.01.2021.
 //
 
 #import "ViewController.h"

@@ -5,10 +5,11 @@
 //  Created by Mehmet Akif DERE on 23.01.2021.
 //
 
+
+
 #import <UIKit/UIKit.h>
+#import <Flutter/Flutter.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
-
+@interface AppDelegate : FlutterAppDelegate <UIApplicationDelegate, FlutterAppLifeCycleProvider>
 
 @end
-

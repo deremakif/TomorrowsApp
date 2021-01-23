@@ -1,8 +1,8 @@
 //
 //  ViewController.h
-//  TodaysApp
+//  TomorrowsApp
 //
-//  Created by Mehmet Akif DERE on 23.01.2021.
+//  Created by Mehmet Akif DERE on 24.01.2021.
 //
 
 #import <UIKit/UIKit.h>
