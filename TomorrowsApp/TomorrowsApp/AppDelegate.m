@@ -102,9 +102,7 @@ handleEventsForBackgroundURLSession:identifier
 
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-  self.flutterEngine = [[FlutterEngine alloc] initWithName:@"engine name"
-                                             
-];
+  self.flutterEngine = [[FlutterEngine alloc] initWithName:@"engine name"];
     
  //   [self.flutterEngine runWithEntrypoint:@"main" libraryURI:@"secondRoute.dart"];
 
