@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:ui' as ui;
 import 'secondRoute.dart';
 
@@ -51,9 +52,72 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  static const methodChannel = const MethodChannel('cxl');
+
   void _incrementCounter() {
     setState(() {
       _counter++;
+      if (_counter == 1) {
+        toNativePush();
+      }
+
+      if (_counter == 2) {
+        toNativePop();
+      }
+
+      if (_counter == 3) {
+        _toNativeSomethingAndGetInfo();
+      }
+    });
+  }
+
+  Future<Null> toNativePush() async {
+    dynamic result;
+    try {
+      Map<String, String> map = {
+        "title": "This is the second parameter from flutter"
+      };
+      result = await methodChannel.invokeMethod('toNativePush', map);
+    } on PlatformException {
+      result = 66;
+    }
+    setState(() {
+      // Type judgment
+      if (result is int) {
+        _counter = result;
+      }
+    });
+  }
+
+  Future<Null> toNativePop() async {
+    dynamic result;
+    try {
+      Map<String, String> map = {"title": "This is a parameter from flutter"};
+      result = await methodChannel.invokeMethod('toNativePop', map);
+    } on PlatformException {
+      result = 888;
+    }
+    setState(() {
+      // Type judgment
+      if (result is int) {
+        _counter = result;
+      }
+    });
+  }
+
+  Future<Null> _toNativeSomethingAndGetInfo() async {
+    dynamic result;
+    try {
+      result = await methodChannel.invokeMethod(
+          'toNativeSomething', 'You clicked $_counter times');
+    } on PlatformException {
+      result = 888;
+    }
+    setState(() {
+      // Type judgment
+      if (result is int) {
+        _counter = result;
+      }
     });
   }
 
