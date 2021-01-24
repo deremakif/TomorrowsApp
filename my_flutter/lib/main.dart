@@ -54,6 +54,29 @@ class _MyHomePageState extends State<MyHomePage> {
 
   static const methodChannel = const MethodChannel('cxl');
 
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    print("didChangeDependencies");
+    getTitle();
+  }
+
+  String title = "";
+  Future<Null> getTitle() async {
+    dynamic result;
+    try {
+      result = await methodChannel.invokeMethod('initialMethod');
+    } on PlatformException {}
+    setState(() {
+      title = result;
+    });
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
@@ -125,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
         child: Column(

@@ -26,33 +26,29 @@
 
 - (IBAction)toDartSide:(UIButton *)sender {
     
+    
     FlutterEngine *flutterEngine = ((AppDelegate *)UIApplication.sharedApplication.delegate).flutterEngine;
-        
+    
+    
+    [flutterEngine run];
+    
     FlutterViewController *flutterViewController =
     [[FlutterViewController alloc] initWithEngine:flutterEngine
-     
                                           nibName:nil bundle:nil];
     
     
-    //FlutterBasicMessageChannel* messageChannel = [FlutterBasicMessageChannel messageChannelWithName:@"cxl"
-                                  //                                                  binaryMessenger:flutterViewController
-                                    //                                                          codec:[FlutterStandardMessageCodec sharedInstance]];
-    //__weak __typeof(self) weakSelf = self;
     
-    //[messageChannel setMessageHandler:^(id message, FlutterReply reply) {
-        // Any message on this channel pops the Flutter view.
-      //  [[weakSelf navigationController] popViewControllerAnimated:YES];
-       // reply(@"");
-   // }];
     
     FlutterMethodChannel *channel = [FlutterMethodChannel methodChannelWithName:@"cxl" binaryMessenger:flutterViewController];
     
     //method
     [channel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
-       
+        
         NSLog(@"flutter gives me：\nmethod=%@ \narguments = %@",call.method,call.arguments);
         
-        if ([call.method isEqualToString:@"toNativeSomething"]) {
+        if ([call.method isEqualToString:@"initialMethod"]) {
+            result(self.yourMessage.text);
+        } else if ([call.method isEqualToString:@"toNativeSomething"]) {
             
             // Call back to flutter
             if (result) {
@@ -64,13 +60,13 @@
             NSLog(@"push===push===push");
             result(@1);
         } else if ([call.method isEqualToString:@"toNativePop"]) {
-                        
+            
             NSLog(@"%@",call.arguments);
             NSLog(@"pop===pop===pop");
             result(@2);
         }
     }];
-        
+    
     [self presentViewController:flutterViewController animated:YES completion:nil];
 }
 

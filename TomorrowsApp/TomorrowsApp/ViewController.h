@@ -12,5 +12,8 @@
 
 - (IBAction)toDartSide:(UIButton *)sender;
 
+@property (weak, nonatomic) IBOutlet UITextField *yourMessage;
+
+
 @end
 

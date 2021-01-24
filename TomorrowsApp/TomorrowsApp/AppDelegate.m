@@ -104,10 +104,9 @@ handleEventsForBackgroundURLSession:identifier
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
   self.flutterEngine = [[FlutterEngine alloc] initWithName:@"engine name"];
     
- //   [self.flutterEngine runWithEntrypoint:@"main" libraryURI:@"secondRoute.dart"];
-
+   
   // Runs the default Dart entrypoint with a default Flutter route.
-  [self.flutterEngine run];
+  //[self.flutterEngine run];
   // Used to connect plugins (only if you have plugins with iOS platform code).
   [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
